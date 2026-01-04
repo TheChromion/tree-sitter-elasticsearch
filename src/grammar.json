@@ -3,8 +3,11 @@
   "name": "elasticsearch",
   "rules": {
     "source_file": {
-      "type": "SYMBOL",
-      "name": "request"
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "request"
+      }
     },
     "request": {
       "type": "SEQ",
@@ -14,8 +17,8 @@
           "name": "method"
         },
         {
-          "type": "PATTERN",
-          "value": "\\s+"
+          "type": "STRING",
+          "value": " "
         },
         {
           "type": "SYMBOL",
@@ -84,8 +87,20 @@
   },
   "extras": [
     {
-      "type": "PATTERN",
-      "value": "\\s"
+      "type": "STRING",
+      "value": " "
+    },
+    {
+      "type": "STRING",
+      "value": "\t"
+    },
+    {
+      "type": "STRING",
+      "value": "\r"
+    },
+    {
+      "type": "STRING",
+      "value": "\n"
     }
   ],
   "conflicts": [],

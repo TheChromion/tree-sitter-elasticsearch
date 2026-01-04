@@ -10,10 +10,12 @@
 export default grammar({
   name: "elasticsearch",
 
-  rules: {
-    source_file: ($) => $.request,
+  extras: ($) => [' ', '\t', '\r', '\n'],
 
-    request: ($) => seq($.method, /\s+/, $.path),
+  rules: {
+    source_file: ($) => repeat($.request),
+
+    request: ($) => seq($.method, ' ', $.path),
 
     method: ($) => choice("GET", "POST", "PUT", "DELETE"),
 

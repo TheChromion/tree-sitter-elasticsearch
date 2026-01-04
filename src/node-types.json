@@ -49,8 +49,8 @@
     "root": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
           "type": "request",
@@ -58,6 +58,11 @@
         }
       ]
     }
+  },
+  {
+    "type": " ",
+    "named": false,
+    "extra": true
   },
   {
     "type": "/",

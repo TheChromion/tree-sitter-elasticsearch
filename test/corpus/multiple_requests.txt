@@ -1,0 +1,52 @@
+=================
+Multiple requests
+=================
+
+GET /index/_search
+GET /other_index/_search
+
+---
+
+(source_file
+  (request
+    (method)
+    (path
+      (path_segment)
+      (path_segment)
+    )
+  )
+  (request
+    (method)
+    (path
+      (path_segment)
+      (path_segment)
+    )
+  )
+)
+
+=========================================
+Multiple requests with empty line between
+=========================================
+
+GET /index/_search
+
+GET /other_index/_search
+
+---
+
+(source_file
+  (request
+    (method)
+    (path
+      (path_segment)
+      (path_segment)
+    )
+  )
+  (request
+    (method)
+    (path
+      (path_segment)
+      (path_segment)
+    )
+  )
+)

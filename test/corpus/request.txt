@@ -1,0 +1,14 @@
+=======
+Request
+=======
+
+GET /index/_search
+
+---
+
+(source_file
+  (request
+    (method)
+    (path
+      (path_segment)
+      (path_segment))))

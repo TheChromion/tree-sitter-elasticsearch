@@ -1,0 +1,41 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "elasticsearch",
+      "camelcase": "Elasticsearch",
+      "title": "Elasticsearch",
+      "scope": "source.elasticsearch",
+      "file-types": [
+        "elasticsearch"
+      ],
+      "injection-regex": "^elasticsearch$",
+      "class-name": "TreeSitterElasticsearch"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Elasticsearch grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Jonas Lieber",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter/tree-sitter-elasticsearch",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "java": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

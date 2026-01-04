@@ -1,0 +1,82 @@
+[
+  {
+    "type": "method",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "path",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "path_segment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "path_segment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "request",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "method",
+          "named": true
+        },
+        {
+          "type": "path",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "request",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "DELETE",
+    "named": false
+  },
+  {
+    "type": "GET",
+    "named": false
+  },
+  {
+    "type": "POST",
+    "named": false
+  },
+  {
+    "type": "PUT",
+    "named": false
+  }
+]

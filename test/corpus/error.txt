@@ -1,0 +1,11 @@
+=====
+Error
+=====
+
+GET
+
+---
+
+(ERROR
+  (method)
+)

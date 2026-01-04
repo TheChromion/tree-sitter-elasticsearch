@@ -1,0 +1,97 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "elasticsearch",
+  "rules": {
+    "source_file": {
+      "type": "SYMBOL",
+      "name": "request"
+    },
+    "request": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "method"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "path"
+        }
+      ]
+    },
+    "method": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "GET"
+        },
+        {
+          "type": "STRING",
+          "value": "POST"
+        },
+        {
+          "type": "STRING",
+          "value": "PUT"
+        },
+        {
+          "type": "STRING",
+          "value": "DELETE"
+        }
+      ]
+    },
+    "path": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "path_segment"
+          }
+        }
+      ]
+    },
+    "path_segment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[a-zA-Z0-9_-]+"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "/"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}
